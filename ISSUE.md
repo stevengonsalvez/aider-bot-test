@@ -1,31 +1,19 @@
-# Error: Missing script "dev" when running npm run dev
+# Add GitHub Actions workflow for npm build
 
-## Error Description
+## Description
+This issue proposes adding a GitHub Actions workflow that will run `npm run build` to ensure the build process works correctly on every push and pull request.
 
-When trying to run `npm run dev`, the following error is encountered:
+## Proposed Solution
+Create a GitHub Actions workflow file in `.github/workflows/` directory that:
+1. Runs on push to main branch and on pull requests
+2. Sets up Node.js
+3. Installs dependencies
+4. Executes `npm run build`
+5. (Optional) Caches npm dependencies for faster builds
 
-```
-npm error Missing script: "dev"
-npm error
-npm error To see a list of scripts, run:
-npm error   npm run
-npm error A complete log of this run can be found in: /Users/stevengonsalvez/.npm/_logs/2025-02-22T15_11_10_327Z-debug-0.log
-```
+## Benefits
+- Catch build issues early before merging
+- Ensures code always builds successfully
+- Provides feedback to contributors on their pull requests
 
-## Expected Behavior
-
-The `npm run dev` command should start the development server.
-
-## Current Configuration
-
-The current scripts in package.json only include:
-- `npm start`
-- `npm test`
-- `npm run build`
-- `npm run eject`
-
-There is no `dev` script defined.
-
-## Possible Solutions
-
-Consider adding a `dev` script to package.json that maps to the appropriate command for starting the development server.
+Let me know if you'd like any specific configurations or additional steps in the workflow!

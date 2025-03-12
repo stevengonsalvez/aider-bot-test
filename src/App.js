@@ -19,13 +19,22 @@ function HeroBanner() {
 
 function App() {
   const [count, setCount] = useState(0);
+  const [darkMode, setDarkMode] = useState(true); // Default to dark mode
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
 
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? 'dark-theme' : 'light-theme'}`}>
       {/* Add the HeroBanner component here */}
       <HeroBanner />
-      
       <header className="App-header">
+        <div className="theme-toggle">
+          <button onClick={toggleTheme}>
+            {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+          </button>
+        </div>
         <h1>Welcome to Aider Bot Test</h1>
         <p>A simple React application</p>
         <div className="counter-container">

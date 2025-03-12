@@ -116,3 +116,75 @@ button {
 button:hover {
   background-color: #21a1c9;
 }
+
+/* Theme styles */
+.dark-theme {
+  background-color: #282c34;
+  color: white;
+}
+
+.light-theme {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Ensure the App-header inherits the theme colors */
+.App-header {
+  background-color: inherit;
+  color: inherit;
+}
+
+/* Style for the theme toggle button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-toggle button {
+  background-color: transparent;
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Button styles for dark theme */
+.dark-theme .theme-toggle button {
+  color: white;
+  border-color: white;
+}
+
+.dark-theme .theme-toggle button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Button styles for light theme */
+.light-theme .theme-toggle button {
+  color: #333;
+  border-color: #333;
+}
+
+.light-theme .theme-toggle button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Counter button styles for different themes */
+.light-theme .counter-container button {
+  background-color: #0078d7;
+  color: white;
+}
+
+.light-theme .counter-container button:hover {
+  background-color: #005fa3;
+}
+
+.dark-theme .counter-container {
+  border-color: #61dafb;
+}
+
+.light-theme .counter-container {
+  border-color: #0078d7;
+}

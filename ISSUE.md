@@ -1,31 +1,32 @@
-# Error: Missing script "dev" when running npm run dev
+# Implement Hero Banner on Landing Page
 
-## Error Description
+## Description
+Add a hero banner section to the landing page with default call-to-action buttons.
 
-When trying to run `npm run dev`, the following error is encountered:
+## Requirements
+- Create a hero banner as the first element in the landing page that occupies the full width of the screen
+- The hero banner should:
+  - Have a visually appealing background (either an image or a gradient)
+  - Include a compelling headline that introduces the purpose of the site
+  - Include a brief subheading or description
+  - Feature at least two call-to-action buttons (e.g., "Get Started", "Learn More")
+- The hero banner should be responsive and look good on all screen sizes
+- The hero banner should maintain the application's theme support (dark/light mode)
+- The styling should be consistent with the existing application style
 
-```
-npm error Missing script: "dev"
-npm error
-npm error To see a list of scripts, run:
-npm error   npm run
-npm error A complete log of this run can be found in: /Users/stevengonsalvez/.npm/_logs/2025-02-22T15_11_10_327Z-debug-0.log
-```
+## Technical Considerations
+- Implement within the existing React component structure
+- Update the CSS to accommodate the new hero section
+- Ensure that the existing theme toggle functionality works with the new hero banner
+- Possibly refactor the current structure to better accommodate a landing page layout
+- Use responsive design principles to ensure it works well on mobile, tablet, and desktop
 
-## Expected Behavior
+## Acceptance Criteria
+- [ ] Hero banner is visible at the top of the landing page
+- [ ] Banner includes headline, subheading, and call-to-action buttons
+- [ ] Banner properly adjusts to screen size (responsive design)
+- [ ] Dark/light theme switching is properly applied to the banner
+- [ ] Layout and design are visually appealing and professional
 
-The `npm run dev` command should start the development server.
-
-## Current Configuration
-
-The current scripts in package.json only include:
-- `npm start`
-- `npm test`
-- `npm run build`
-- `npm run eject`
-
-There is no `dev` script defined.
-
-## Possible Solutions
-
-Consider adding a `dev` script to package.json that maps to the appropriate command for starting the development server.
+## Additional Notes
+This is a learning exercise to enhance the front-end development skills. Code will be implemented by the assignee as a learning opportunity.

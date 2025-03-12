@@ -2,9 +2,91 @@
   text-align: center;
 }
 
+/* Add these new styles for the hero banner */
+.hero-banner {
+  width: 100%;
+  min-height: 60vh;
+  background: linear-gradient(135deg, #6e8efb 0%, #a777e3 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-banner p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-primary, .cta-secondary {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-primary {
+  background-color: #ffffff;
+  color: #6e46a7;
+  border: none;
+}
+
+.cta-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-primary:hover, .cta-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Make the hero banner responsive */
+@media (max-width: 768px) {
+  .hero-banner h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-banner p {
+    font-size: 1.2rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-primary, .cta-secondary {
+    width: 80%;
+  }
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 40vh; /* Reduced from 100vh to accommodate the hero banner */
   display: flex;
   flex-direction: column;
   align-items: center;

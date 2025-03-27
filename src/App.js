@@ -1,4 +1,12 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Box, CssBaseline, Toolbar } from '@mui/material';
+import NavigationDrawer from './components/Drawer/NavigationDrawer';
+import Home from './pages/Home';
+import RandomDog from './pages/Dogs/RandomDog';
+import DogBreeds from './pages/Dogs/DogBreeds';
+import RandomCat from './pages/Cats/RandomCat';
+import CatFacts from './pages/Cats/CatFacts';
 import './App.css';
 
 // New HeroBanner component
@@ -26,25 +34,29 @@ function App() {
   };
 
   return (
-    <div className={`App ${darkMode ? 'dark-theme' : 'light-theme'}`}>
-      {/* Add the HeroBanner component here */}
-      <HeroBanner />
-      <header className="App-header">
+    <Router>
+      <div className={`App ${darkMode ? 'dark-theme' : 'light-theme'}`}>
+        <CssBaseline />
+        <Box sx={{ display: 'flex' }}>
+          <NavigationDrawer darkMode={darkMode} />
+          <Box component="main" sx={{ flexGrow: 1, p: 0 }}>
+            <Toolbar /> {/* This creates space below the AppBar */}
+            <Routes>
+              <Route path="/" element={<Home darkMode={darkMode} />} />
+              <Route path="/dogs/random" element={<RandomDog darkMode={darkMode} />} />
+              <Route path="/dogs/breeds" element={<DogBreeds darkMode={darkMode} />} />
+              <Route path="/cats/random" element={<RandomCat darkMode={darkMode} />} />
+              <Route path="/cats/facts" element={<CatFacts darkMode={darkMode} />} />
+            </Routes>
+          </Box>
+        </Box>
         <div className="theme-toggle">
           <button onClick={toggleTheme}>
             {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
           </button>
         </div>
-        <h1>Welcome to Aider Bot Test</h1>
-        <p>A simple React application</p>
-        <div className="counter-container">
-          <p>You clicked {count} times</p>
-          <button onClick={() => setCount(count + 1)}>Increment</button>
-          <button onClick={() => setCount(count - 1)}>Decrement</button>
-          <button onClick={() => setCount(0)}>Reset</button>
-        </div>
-      </header>
-    </div>
+      </div>
+    </Router>
   );
 }
 

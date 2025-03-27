@@ -1,5 +1,30 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Drawer and content layout */
+
+/* Adjust theme toggle position for the drawer layout */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1200;
+}
+
+/* Ensure the theme toggle button is visible over the drawer */
+.theme-toggle button {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .theme-toggle {
+    bottom: 10px;
+    right: 10px;
+  }
 }
 
 /* Add these new styles for the hero banner */

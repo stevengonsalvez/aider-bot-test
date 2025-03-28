@@ -25,7 +25,7 @@ import {
   Brightness7 as LightModeIcon,
   Photo as PhotoIcon,
   Category as CategoryIcon,
-  Fact as FactIcon
+  FactCheckOutlined as FactIcon,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
